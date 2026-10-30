@@ -15,55 +15,69 @@
 
 ## Épica de búsqueda
 
-Como [rol], quiero [capacidad amplia], para [beneficio].
+Como cocinero o usuario del sistema, quiero buscar recetas por texto libre, seleccionando ingredientes incluidos y excluyendo ingredientes no deseados, para encontrar fácilmente opciones culinarias adaptadas a mis gustos, disponibilidad de despensa o restricciones alimentarias.
 
-**Estado:** descompuesta en US-01, US-02 y US-03. Conserva la necesidad conjunta.
+Estado: descompuesta en US-01, US-02 y US-03. Conserva la necesidad conjunta.
 
 ## Justificación de la división
 
-[Justificación de los resultados útiles que separa la división.]
+La división en tres historias independientes separa tres capacidades funcionales distintas de búsqueda, permitiendo que cada una entregue valor útil de forma autónoma:
+
+US-01 permite una búsqueda rápida y general por texto (título, descripción, etiquetas).
+
+US-02 resuelve la necesidad de aprovechar ingredientes específicos disponibles en la cocina.
+
+US-03 aborda de forma independiente la seguridad y preferencias del usuario (alergias o intolerancias) mediante la exclusión.
+
+Esta separación evita dividir el trabajo por componentes técnicos o pantallas y permite un desarrollo e integración incremental sin que una historia bloquee el uso de las otras.
 
 ## US-01
+Título: Buscar mediante una palabra o frase
 
-**Título:** [Capacidad]
+Como usuario del sistema, quiero buscar recetas introduciendo un término o frase en el cuadro de búsqueda, para localizar rápidamente recetas cuyo título, descripción o etiquetas contengan dicho texto.
 
-Como [rol], quiero [capacidad], para [beneficio].
+Fuentes: UR-08; UC-21; FR-085; acta de UC-21 v1.1, apartado 3.1.
 
-**Fuentes:** UR-08; UC-21; [FR principal]; acta, [apartado pertinente].
+Criterios de aceptación
 
-### Criterios de aceptación
+CA-01. Dado que el usuario introduce un término o frase clave en el buscador (ej. "pasta" o "salsa verde"), cuando ejecuta la búsqueda, entonces el sistema muestra el listado de recetas que contienen la coincidencia en su título, descripción o etiquetas.
 
-- **CA-01.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-02.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-03.** Dado [situación], cuando [acción], entonces [resultado observable].
+CA-02. Dado que el usuario busca un término que no coincide con ninguna receta del catálogo, cuando se procesa la búsqueda, entonces el sistema muestra un mensaje indicando que no hay resultados junto con sugerencias de ayuda y recetas recomendadas (FR-102).
+
+CA-03. Dado que el usuario intenta realizar una búsqueda con el campo de texto vacío o formado solo por espacios, cuando presiona el botón de búsqueda, entonces el sistema requiere al usuario introducir al menos un carácter válido sin ejecutar una consulta vacía.
 
 ## US-02
 
-**Título:** [Capacidad]
+Título: Buscar mediante una palabra o frase
 
-Como [rol], quiero [capacidad], para [beneficio].
+Como usuario del sistema, quiero buscar recetas introduciendo un término o frase en el cuadro de búsqueda, para localizar rápidamente recetas cuyo título, descripción o etiquetas contengan dicho texto.
 
-**Fuentes:** UR-08; UC-21; [FR principal]; acta, [apartado pertinente].
+Fuentes: UR-08; UC-21; FR-085; acta de UC-21 v1.1, apartado 3.1.
 
-### Criterios de aceptación
+Criterios de aceptación
 
-- **CA-01.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-02.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-03.** Dado [situación], cuando [acción], entonces [resultado observable].
+CA-01. Dado que el usuario introduce un término o frase clave en el buscador (ej. "pasta" o "salsa verde"), cuando ejecuta la búsqueda, entonces el sistema muestra el listado de recetas que contienen la coincidencia en su título, descripción o etiquetas.
+
+CA-02. Dado que el usuario busca un término que no coincide con ninguna receta del catálogo, cuando se procesa la búsqueda, entonces el sistema muestra un mensaje indicando que no hay resultados junto con sugerencias de ayuda y recetas recomendadas (FR-102).
+
+CA-03. Dado que el usuario intenta realizar una búsqueda con el campo de texto vacío o formado solo por espacios, cuando presiona el botón de búsqueda, entonces el sistema requiere al usuario introducir al menos un carácter válido sin ejecutar una consulta vacía.
 
 ## US-03
 
-**Título:** [Capacidad]
+Título: Excluir ingredientes
 
-Como [rol], quiero [capacidad], para [beneficio].
+Como usuario con alergias, intolerancias o preferencias alimentarias, quiero indicar ingredientes que deben ser excluidos del resultado de búsqueda, para obtener un listado de recetas seguras que no contengan ninguno de esos elementos.
 
-**Fuentes:** UR-08; UC-21; [FR principal]; acta, [apartado pertinente].
+Fuentes: UR-08; UC-21; FR-087; acta de UC-21 v1.1, apartado 3.3.
 
-### Criterios de aceptación
+Criterios de aceptación
 
-- **CA-01.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-02.** Dado [situación], cuando [acción], entonces [resultado observable].
-- **CA-03.** Dado [situación], cuando [acción], entonces [resultado observable].
+CA-01. Dado que el usuario especifica uno o más ingredientes a excluir (ej. "cacahuete" o "marisco"), cuando ejecuta la búsqueda, entonces el sistema omitirá de los resultados todas las recetas que contengan dichos ingredientes.
+
+CA-02. Dado que el usuario establece filtros de exclusión en combinación con una búsqueda por texto o por ingredientes incluidos, cuando confirma la consulta, entonces el sistema aplica la exclusión de forma estricta asegurando que no aparezcan recetas no deseadas.
+
+CA-03. Dado que el usuario intenta agregar un mismo ingrediente a la lista de incluidos y a la de excluidos simultáneamente, cuando intenta confirmar la adición, entonces el sistema notifica el conflicto e impide la selección contradictoria.
+
 
 ## Revisión INVEST
 
