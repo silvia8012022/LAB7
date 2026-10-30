@@ -48,20 +48,19 @@ CA-03. Dado que el usuario intenta realizar una búsqueda con el campo de texto 
 
 ## US-02
 
-Título: Buscar mediante una palabra o frase
 
-Como usuario del sistema, quiero buscar recetas introduciendo un término o frase en el cuadro de búsqueda, para localizar rápidamente recetas cuyo título, descripción o etiquetas contengan dicho texto.
+Título: Buscar por ingredientes incluidos
 
-Fuentes: UR-08; UC-21; FR-085; acta de UC-21 v1.1, apartado 3.1.
+Como usuario con ingredientes disponibles en la cocina, quiero seleccionar uno o varios ingredientes necesarios en la búsqueda, para obtener un listado de recetas que utilicen obligatoriamente dichos ingredientes en su preparación.
 
+Fuentes: UR-08; UC-21; FR-086; acta de UC-21 v1.1, apartado 3.2.
 Criterios de aceptación
 
-CA-01. Dado que el usuario introduce un término o frase clave en el buscador (ej. "pasta" o "salsa verde"), cuando ejecuta la búsqueda, entonces el sistema muestra el listado de recetas que contienen la coincidencia en su título, descripción o etiquetas.
+    CA-01. Dado que el usuario selecciona uno o varios ingredientes a incluir (ej. "tomate" y "huevo"), cuando aplica la búsqueda, entonces el sistema devuelve únicamente las recetas que incluyan todos los ingredientes seleccionados.
 
-CA-02. Dado que el usuario busca un término que no coincide con ninguna receta del catálogo, cuando se procesa la búsqueda, entonces el sistema muestra un mensaje indicando que no hay resultados junto con sugerencias de ayuda y recetas recomendadas (FR-102).
+    CA-02. Dado que el usuario empieza a escribir el nombre de un ingrediente en el filtro de inclusión, cuando escribe al menos dos caracteres, entonces el sistema despliega sugerencias autocompletadas de ingredientes existentes en el catálogo.
 
-CA-03. Dado que el usuario intenta realizar una búsqueda con el campo de texto vacío o formado solo por espacios, cuando presiona el botón de búsqueda, entonces el sistema requiere al usuario introducir al menos un carácter válido sin ejecutar una consulta vacía.
-
+    CA-03. Dado que la combinación de ingredientes incluidos no coincide con ninguna receta registrada, cuando se ejecuta la búsqueda, entonces el sistema muestra una notificación informando de la ausencia de coincidencias junto con alternativas para suavizar el filtro (FR-102).
 ## US-03
 
 Título: Excluir ingredientes
