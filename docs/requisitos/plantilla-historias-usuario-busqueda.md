@@ -85,12 +85,12 @@ La revisión abarca US-01, US-02 y US-03. «Aplicado» indica si se ha realizado
 
 | Criterio | Pregunta de revisión | Aplicado | Cumple | Justificación |
 | --- | --- | --- | --- | --- |
-| Independiente | ¿Puede implementarse cada historia y ofrecer un resultado útil sin implementar antes las otras historias del conjunto? Puede compartir infraestructura con ellas. | [Sí/No] | [Sí/No/Pendiente] | [Historias y motivo] |
-| Negociable | ¿Cada historia explica qué necesita la persona y deja margen para discutir los detalles de la solución, respetando los acuerdos confirmados? | [Sí/No] | [Sí/No/Pendiente] | [Historias y motivo] |
-| Valiosa | ¿La parte «para…» de cada historia explica el beneficio que obtiene la persona al usar esa capacidad? | [Sí/No] | [Sí/No/Pendiente] | [Historias y motivo] |
-| Estimable | ¿Están claros el alcance y los datos necesarios para estimar el trabajo de cada historia? | [Sí/No] | [Sí/No/Pendiente] | [Historias y motivo] |
-| Pequeña | ¿Se centra cada historia en una única capacidad de alcance manejable? | [Sí/No] | [Sí/No/Pendiente] | [Historias y motivo] |
-| Comprobable | ¿Los criterios de aceptación de cada historia describen acciones y resultados observables que permiten distinguir un comportamiento correcto de uno incorrecto? | [Sí/No] | [Sí/No/Pendiente] | [Historias y motivo] |
+| Independiente | ¿Puede implementarse cada historia y ofrecer un resultado útil sin implementar antes las otras historias del conjunto? Puede compartir infraestructura con ellas. | [Sí] | [Sí] | US-01, US-02 y US-03: Cada historia ofrece un filtro de búsqueda funcional e independiente (palabra/frase, inclusión o exclusión). Comparten el motor de búsqueda subyacente, pero cada una aporta un resultado útil de forma autónoma. |
+| Negociable | ¿Cada historia explica qué necesita la persona y deja margen para discutir los detalles de la solución, respetando los acuerdos confirmados? | [Sí] | [Sí] |US-01, US-02 y US-03: Todas definen la intención de negocio y la capacidad requerida respetando los acuerdos del acta UC-21 v1.1 sin forzar aspectos de diseño o implementación técnica concreta.|
+| Valiosa | ¿La parte «para…» de cada historia explica el beneficio que obtiene la persona al usar esa capacidad? | [Sí] | [Sí] | US-01, US-02 y US-03: Cada historia explicita un beneficio claro: US-01 facilita el hallazgo rápido, US-02 aprovecha ingredientes disponibles y US-03 garantiza la seguridad ante alergias o intolerancias. |
+| Estimable | ¿Están claros el alcance y los datos necesarios para estimar el trabajo de cada historia? | [Sí] | [Sí] | US-01, US-02 y US-03: Al estar delimitadas por sus criterios de aceptación específicos y los Requisitos Funcionales del catálogo (FR-085, FR-086, FR-087), el equipo puede estimar su esfuerzo sin ambigüedades|
+| Pequeña | ¿Se centra cada historia en una única capacidad de alcance manejable? | [Sí] | [Sí]| US-01, US-02 y US-03: La épica inicial se ha descompuesto adecuadamente en tres capacidades funcionales concretas. Ninguna representa una tarea técnica ni abarca múltiples pantallas.|
+| Comprobable | ¿Los criterios de aceptación de cada historia describen acciones y resultados observables que permiten distinguir un comportamiento correcto de uno incorrecto? | [Sí] | [Sí] |US-01, US-02 y US-03: Todos los criterios están formalizados mediante el patrón Dado... cuando... entonces..., especificando inputs claros y comportamientos observables del sistema (incluyendo el caso especial FR-102).   |
 
 ## Dudas pendientes
 
